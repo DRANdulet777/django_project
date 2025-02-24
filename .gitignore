@@ -1,0 +1,18 @@
+# Виртуальное окружение
+env/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# Настройки IDE
+.vscode/
+.idea/
+
+# Файлы базы данных
+db.sqlite3
+
+# Логи и статика
+*.log
+staticfiles/
+media/
