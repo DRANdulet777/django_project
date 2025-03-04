@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h2>Удалить регистрацию?</h2>
+    <p>Пользователь: {{ reservation.customer.name }}</p>
+    <p>Стол: Table {{ reservation.table.number }}</p>
+    <p>Дата: {{ reservation.date }}</p>
+
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Да, Удалить</button>
+        <a href="{% url 'reservations_list' %}" class="btn btn-secondary">Назад</a>
+    </form>
+</div>
+{% endblock %}
