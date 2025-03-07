@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h2>Список столиков</h2>
+    <ul class="list-group">
+        {% for table in tables %}
+        <li class="list-group-item">
+            Столик №{{ table.number }} — {{ table.seats }} мест ({{ table.is_available|yesno:"Доступен,Занят" }})
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

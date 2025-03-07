@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h2>Список бронирований</h2>
+    <ul class="list-group">
+        {% for reservation in reservations %}
+        <li class="list-group-item">
+            {{ reservation.customer.name }} забронировал столик №{{ reservation.table.number }} на {{ reservation.date }}
+            (Статус: <strong>{{ reservation.get_status_display }}</strong>)
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
