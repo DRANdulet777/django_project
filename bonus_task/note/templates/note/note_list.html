@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Список заметок</h2>
+<a href="{% url 'note_create' %}" class="btn btn-primary">Добавить</a>
+<ul class="list-group mt-3">
+    {% for note in notes %}
+        <li class="list-group-item">
+            <a href="{% url 'note_detail' note.pk %}">{{ note.title }}</a>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}
