@@ -1,0 +1,11 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<h2>{% if form.instance.pk %}Редактировать пост{% else %}Создать пост{% endif %}</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-success">💾 Сохранить</button>
+    <a href="{% url 'post_list' %}" class="btn btn-secondary">Отмена</a>
+</form>
+{% endblock %}
